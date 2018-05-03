@@ -1,8 +1,7 @@
 ---
 layout: home
 hero:
-    title: Stay Up To Date
-    subtitle: Get notified of products updates and new releases
+    title: Receive Product Updates In Your Inbox
     newsletter: true
 categories:
     columns: 3

@@ -1,5 +1,5 @@
 <div class="uk-section section-hero">
-    <div class="uk-container uk-container-small">
+    <div class="uk-container uk-container-small" data-uk-scrollspy="cls: uk-animation-slide-bottom-medium; repeat: true">
         {% if page.hero.image %}
         <p class="hero-image uk-text-center"><img src="{{ site.post_assets | absolute_url }}{{ page.hero.image }}" alt="Hero"></p>
         {% endif %}
@@ -25,7 +25,7 @@
                     </div>
                     <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_2e56c123105fcd37e5dab02bd_e6e945b784" tabindex="-1" value=""></div>
-                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button uk-button uk-button-secondary uk-button-large"></div>
+                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button uk-button uk-button-primary uk-button-large"></div>
                   </div>
                 </div>
               </div>
