@@ -2,94 +2,96 @@
 layout: default
 ---
 
-<script>
-  function filter(tag) {
-    setActiveTag(tag);
-    showContainer(tag);
-  }
-  function setActiveTag(id) {
-    // loop through all items and remove active class
-    var items = document.getElementsByClassName('uk-card-box');
-    for(var i=0; i < items.length; i++) {
-      items[i].classList.remove('active');
-    }
-    // set the selected id's item to active
-    var item = document.getElementById(id + '-card');
-    if(item) {
-      item.classList.add('active');
-    }
-  }
-  function showContainer(id) {
-    // loop through all lists and hide them
-    var lists = document.getElementsByClassName('article');
-    for(var i=0; i < lists.length; i++) {
-      lists[i].classList.add('hidden');
-    }
-    // remove the hidden class from the list corresponding to the selected id
-    var list = document.getElementById(id + '-article');
-    if(list) {
-      list.classList.remove('hidden');
-    }
-  }
+{% if page.categories.columns %}
+    {% assign columns = page.categories.columns %}
+{% else %}
+    {% assign columns = 3 %}
+{% endif %}
 
-</script>
+{% if page.categories %}
+<div class="uk-section uk-background-muted-">
+    <div class="uk-container">
 
-<div class="tm-margin-large-top">
-    <div class="uk-container uk-text-center">
+        {% if page.categories.title %}
+            <h2 class="uk-text-center heading-hero-2">{{ page.categories.title }}</h2>
+        {% endif %}
 
-        {% if page.hero.subtitle %}<p class="uk-margin-remove-bottom tm-overtitle uk-margin-top uk-text-uppercase letter-spacing-l text-shadow uk-text-muted" data-uk-scrollspy="cls: uk-animation-slide-bottom; delay: 100">{{ page.hero.subtitle }}</p>{% endif %}
-        <h1 class="uk-margin-small-top uk-heading-hero text-shadow" data-uk-scrollspy="cls: uk-animation-slide-bottom; delay: 200">{{ page.hero.title }}</h1>
+        {% if page.categories.subtitle %}<p class="subtitle uk-text-lead uk-text-center">{{ page.categories.subtitle | escape }}</p>{% endif %}
 
-        <div class="uk-grid-medium uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-small uk-grid-match tm-margin-large-top uk-text-center" data-uk-grid data-uk-scrollspy="cls: uk-animation-slide-bottom; delay: 300">
-          {% for article in site.support %}
+        <div class="uk-child-width-1-{{ columns }}@m uk-grid-match uk-text-center uk-margin-medium-top" data-uk-grid>
+        {% for item in site.data.navigation_home %}
+            {% if item.title %}
+            {% assign doc_url = item.doc | prepend:"/docs/" | append:"/" %}
+            {% assign doc = site.docs | where:"url", doc_url | first %}
             <div>
-                <a id="{{ article.title | slugify }}-card" href="#{{ article.title | slugify }}-article" class="uk-card uk-card-primary uk-card-hover uk-card-box uk-card-body uk-border-rounded" data-uk-scroll="duration: 400; offset: 150;"{% if page.filter %} onclick="filter('{{ article.title | slugify }}');"{% endif %}>
-                    {% if article.icon %}<span class="uk-icon-forder uk-border-rounded"><span data-uk-icon="icon: {{ article.icon }}; ratio: 2"></span></span>{% endif %}
-                    <p>{{ article.title }}</p>
-                </a>
+                <div class="uk-card uk-card-body uk-inline uk-border-rounded">
+                    <a class="uk-position-cover" href="{{ doc.url }}"></a>
+                    {% if item.icon %}
+                    <span data-uk-icon="icon: {{ item.icon }}; ratio: 2" class=""></span>
+                    {% endif %}
+                    <h3 class="uk-card-title uk-margin">{{ item.title }}</h3>
+                    {% if item.desc %}
+                    <p>{{ item.desc }}</p>
+                    {% endif %}
+                </div>
             </div>
-          {% endfor %}
+            {% endif %}
+        {% endfor %}
         </div>
 
     </div>
 </div>
+{% endif %}
 
-<div>
+{% if page.featured.tag %}
+<div class="uk-section uk-text-center">
     <div class="uk-container uk-container-small">
 
-        {% for article in site.support %}
-
-          <article id="{{ article.title | slugify }}-article" class="article article-support">
-
-            <h2 class="article-support-title uk-margin-medium-bottom text-shadow">{{ article.title }}<a href="#" data-uk-totop data-uk-scroll class="uk-float-right"></a></h2>
-            <hr class="article-support-rule">
-
-            {% if article.toc %}
-            <div class="article-toc-{{ forloop.index }}"></div>
+        {% if page.featured.title %}
+        <h2 class="heading-hero-2">{{ page.featured.title }}</h2>
+        {% endif %}
+        <ul class="uk-list uk-list-large list-featured uk-child-width-1-2@s" data-uk-grid>
+        {% for doc in site.docs %}
+            {% if doc.tags contains page.featured.tag %}
+            <li><a href="{{ site.baseurl }}{{ doc.url }}">{{doc.title}}</a></li>
             {% endif %}
-
-            <div class="article-content article-content-{{ forloop.index }}">{{ article.content }}</div>
-
-          </article>
-
-          {% if article.toc %}
-            <script>
-              tocbot.init({
-                tocSelector: '.article-toc-{{ forloop.index }}',
-                contentSelector: '.article-content-{{ forloop.index }}',
-                headingSelector: 'h3',
-                scrollSmooth: true,
-                scrollSmoothDuration: 400,
-              });
-            </script>
-          {% endif %}
-
         {% endfor %}
+        </ul>
 
     </div>
-
 </div>
+{% endif %}
+
+{% if page.section %}
+<div class="uk-section uk-text-center">
+    <div class="uk-container uk-container-small">
+
+        {% if page.section.title %}
+            <h2 class="uk-text-center heading-hero-2">{{ page.section.title }}</h2>
+        {% endif %}
+
+        {% if page.section.subtitle %}<p class="subtitle uk-text-lead uk-text-center">{{ page.section.subtitle | escape }}</p>{% endif %}
+
+            <div class="article-content uk-margin-medium-top">{{ content }}</div>
+    </div>
+</div>
+{% endif %}
+
+{% if page.cta.button_url contains 'http' %}
+    {% assign domain = '' %}
+{% else %}
+    {% assign domain = relative_url %}
+{% endif %}
+
 
 {% if page.cta %}
-  {% include cta.html %}
+<div class="uk-section uk-text-center">
+    <div class="uk-container uk-container-small">
+        <div class="" data-uk-scrollspy="cls: uk-animation-slide-bottom; repeat: true; delay: 100">
+            <h3>{{ page.cta.title }}</h3>
+            {% if page.cta.subtitle %}<p class="subtitle uk-text-lead uk-text-center">{{ page.cta.subtitle | escape }}</p>{% endif %}
+            <a class="uk-button uk-button-primary uk-button-large button-cta" href="{{ domain }}{{ page.cta.button_url }}">{{ page.cta.button_text }}</a>
+        </div>
+    </div>
+</div>
 {% endif %}

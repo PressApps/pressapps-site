@@ -1,6 +1,7 @@
 # Changelog page source
 
-- title: Version 1.1.0
+- title: Version 1.0.0
+  label: STABLE
   date: Oct 21, 2017
   list:
   - Added Slideshow component
@@ -12,6 +13,7 @@
   - Larger horizontal padding for form input and textarea
 
 - title: Version 1.0.0
+  label: BETA 1
   date: Sep 01, 2017
   list:
   - Allow fullscreen mode for YouTube videos in Lightbox
@@ -19,6 +21,7 @@
   - Fix scrollbar jumping in Switcher
 
 - title: Version 0.6.0
+  label:
   date: Aug 15, 2017
   list:
   - Added style support for radio and checkbox in Firefox
@@ -27,6 +30,7 @@
   - Fixed responsive images in modal for IE11
 
 - title: Version 0.5.0
+  label:
   date: Oct 21, 2017
   list:
   - Media options now support any valid media query syntax

@@ -52,7 +52,7 @@
 // @import "../uikit/components/accordion.scss";
 @import "../uikit/components/drop.scss"; // After: Card
 @import "../uikit/components/dropdown.scss"; // After: Card
-@import "../uikit/components/modal.scss"; // After: Close
+// @import "../uikit/components/modal.scss"; // After: Close
 @import "../uikit/components/lightbox.scss"; // After: Close
 @import "../uikit/components/slideshow.scss";
 @import "../uikit/components/sticky.scss";
@@ -72,12 +72,12 @@
 // @import "../uikit/components/countdown.scss";
 
 // Utilities
-@import "../uikit/components/animation.scss";
+// @import "../uikit/components/animation.scss";
 @import "../uikit/components/width.scss";
 @import "../uikit/components/text.scss";
 @import "../uikit/components/column.scss";
 @import "../uikit/components/cover.scss";
-@import "../uikit/components/background.scss";
+// @import "../uikit/components/background.scss";
 @import "../uikit/components/align.scss";
 @import "../uikit/components/utility.scss";
 @import "../uikit/components/flex.scss"; // After: Utility
@@ -86,7 +86,7 @@
 @import "../uikit/components/position.scss";
 // @import "../uikit/components/transition.scss";
 @import "../uikit/components/visibility.scss";
-@import "../uikit/components/inverse.scss";
+// @import "../uikit/components/inverse.scss";
 
 // Need to be loaded last
 @import "../uikit/components/print.scss";

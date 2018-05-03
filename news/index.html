@@ -1,18 +1,18 @@
 ---
 layout: default
-title: What's New
+title: News
 ---
 
-<section class="tm-margin-large-top news">
-    <div class="uk-container uk-container-small">
+<div class="uk-section">
+    <div class="uk-container uk-container-xsmall">
 
-        <h1 class="uk-heading-hero uk-text-center">{{ page.title | escape }}</h1>
+        <h1 class="uk-article-title">{{ page.title | escape }}</h1>
 
         {% for post in paginator.posts %}
-        <div class="uk-card uk-card-primary uk-card-hover card-post uk-inline uk-border-rounded uk-width-1-1 uk-margin-medium">
+        <div class="uk-card card-post uk-inline uk-border-rounded uk-width-1-1 uk-margin">
             <a class="uk-position-cover" href="{{ post.url | relative_url }}"></a>
             <div class="uk-card-header">
-                <div class="uk-grid-small uk-flex-middle" data-uk-grid>
+                <div class="uk-grid-small uk-flex-middle" uk-grid>
                     {% if page.author %}
                       {% assign author = site.authors[page.author] %}
                     {% else %}
@@ -21,7 +21,7 @@ title: What's New
 
                     <div class="uk-width-auto">
                         {% if author.github %}
-                            {% avatar {{ author.github }} size=56 %}
+                            {% avatar {{ author.github }} size=40 %}
                         {% endif %}
                     </div>
                     <div class="uk-width-expand">
@@ -37,7 +37,7 @@ title: What's New
                 {{ post.excerpt }}
             </div>
             <div class="uk-card-footer">
-                <span class="uk-button-">Read more</span>
+                <span class="uk-button uk-button-text">Read more &rarr;</span>
             </div>
 
         </div>
@@ -46,4 +46,4 @@ title: What's New
         {% include paginate-blog.html %}
 
     </div>
-</section>
+</div>
