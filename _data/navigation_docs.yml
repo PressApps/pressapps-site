@@ -1,13 +1,13 @@
 - title: Getting Started
   docs:
-  - home
+  - info
   - quickstart
   - installation
   - windows
 
-- title: Account and Billing
+- title: Documentation Plugin
   docs:
-  - frontmatter
+  - documentation-wordpress-plugin
   - posts
   - drafts
   - pages

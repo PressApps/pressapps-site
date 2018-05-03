@@ -6,7 +6,7 @@
 
 # Site title and description
 title:              PressApps
-description:        Premium WordPress Themes and Plugins
+description:        Premium WordPress Themes and Plugins | Jekyll Themes
 
 # Site subpath, e.g. /blog
 baseurl:            ""
@@ -93,5 +93,5 @@ sass:
   style:            compressed
 
 collections:
-  docs:
+  help:
     output: true

@@ -1,10 +1,9 @@
 ---
 layout: home
 hero:
-    title: How Can We Help?
-    subtitle: Search or browse in depth articles and videos on everything Jekyll, from basic theme setup and hosting to customisation and development
-    image: imac.svg
-    search: true
+    title: Stay Up To Date
+    subtitle: Get notified of products updates and new releases
+    newsletter: true
 categories:
     columns: 3
     title: Browse Topics
