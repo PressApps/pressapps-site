@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48" version="1.1" width="64" height="64" style="fill: rgb(204, 204, 204);">
+<g id="surface1">
+<path style=" fill:#BBDEFB;" d="M 42 41 C 42 43.210938 40.210938 45 38 45 L 15 45 C 12.789063 45 11 43.210938 11 41 L 11 7 C 11 4.789063 12.789063 3 15 3 L 38 3 C 40.210938 3 42 4.789063 42 7 Z "/>
+<path style=" fill:#3F51B5;" d="M 33 24 L 21 34 L 21 14 Z "/>
+<path style=" fill:#3F51B5;" d="M 6 21 L 23 21 L 23 27 L 6 27 Z "/>
+</g>
+</svg>

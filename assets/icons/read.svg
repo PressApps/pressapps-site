@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48" version="1.1" width="64" height="64" style="fill: rgb(204, 204, 204);">
+<g id="surface1">
+<path style=" fill:#FF7043;" d="M 38 44 L 12 44 L 12 4 L 38 4 C 40.199219 4 42 5.800781 42 8 L 42 40 C 42 42.199219 40.199219 44 38 44 "/>
+<path style=" fill:#BF360C;" d="M 10 4 L 12 4 L 12 44 L 10 44 C 7.800781 44 6 42.199219 6 40 L 6 8 C 6 5.800781 7.800781 4 10 4 "/>
+<path style=" fill:#E64A19;" d="M 37 15 L 17 15 L 17 11 L 37 11 Z M 37 17 L 17 17 L 17 19 L 37 19 Z "/>
+</g>
+</svg>

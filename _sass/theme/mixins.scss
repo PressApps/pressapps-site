@@ -108,12 +108,9 @@ ul.doc-nav {
         -webkit-appearance:none;
     }
 }
-@mixin hook-card(){
-    border: solid 1px lighten($global-border, 10%);
-    &:hover {
-        border-color: darken($global-border, 10%);
-    }
-}
+// @mixin hook-card(){
+//
+// }
 @mixin hook-card-body(){
     > p {
         font-size: $global-small-font-size;
@@ -145,6 +142,12 @@ ul.doc-nav {
             padding-bottom: $global-medium-margin * 0.8;
             padding-top: 0;
         }
+    }
+    .card-border {
+      border: solid 1px lighten($global-border, 10%);
+      &:hover {
+          border-color: darken($global-border, 10%);
+      }
     }
 }
 
@@ -242,6 +245,9 @@ ul.doc-nav {
     }
     .uk-container.uk-container-xsmall {
         max-width: 700px;
+    }
+    .uk-container.uk-container-xxsmall {
+        max-width: 600px;
     }
     .hvr-forward {
         display: inline-block;

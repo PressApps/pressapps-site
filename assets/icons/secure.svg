@@ -1,0 +1,6 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" style="fill: rgb(204, 204, 204);" xml:space="preserve" width="64" height="64">
+<path style="fill:#F44336;" d="M44,24c0,11.044-8.956,20-20,20S4,35.044,4,24S12.956,4,24,4S44,12.956,44,24z"/>
+<path style="fill:none;stroke:#FFFFFF;stroke-width:2;" d="M20,21v-2c0,0,0-4,4-4s4,4,4,4v2"/>
+<path style="fill:#FFCDD2;" d="M30.199,32H17.801C16.805,32,16,31.195,16,30.199v-8.398C16,20.805,16.805,20,17.801,20h12.398&#10;&#9;C31.191,20,32,20.805,32,21.801v8.398C32,31.195,31.191,32,30.199,32"/>
+<path style="fill:#C62828;" d="M26,26c0,1.105-0.895,2-2,2s-2-0.895-2-2s0.895-2,2-2S26,24.895,26,26"/>
+</svg>

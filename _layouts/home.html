@@ -2,6 +2,46 @@
 layout: default
 ---
 
+<div class="uk-section uk-background-muted">
+  <div class="uk-container">
+
+    <h2 class="uk-text-center heading-hero-2">Products</h2>
+
+    <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-match uk-text-center" data-uk-grid>
+      {% for product in site.products %}
+        <div>
+          <div class="uk-card uk-card-hover uk-card-body uk-inline">
+            <a class="uk-position-cover" href="{{ product.link }}" target="_blank"></a>
+            {% if product.icon %}
+              <img class="icon" src="/assets/icons/{{ product.icon }}" alt="{{ product.title }}">
+            {% endif %}
+            <h3 class="uk-card-title uk-margin-top uk-margin-remove-bottom">{{product.title}}</h3>
+            {% if product.subtitle %}
+              <p class="uk-margin-top uk-margin-remove-bottom">{{product.subtitle}}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="uk-section uk-background-secondary">
+  <div class="uk-container">
+
+    <h2 class="uk-text-center heading-hero-2">Over 12000 Awesome Customers Are Using PressApps Products</h2>
+
+    <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-match uk-text-center" data-uk-grid>
+        <div>
+          <div class="uk-card uk-card-hover uk-card-body uk-inline">
+ICON
+
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
 {% if page.categories.columns %}
     {% assign columns = page.categories.columns %}
 {% else %}
@@ -9,7 +49,7 @@ layout: default
 {% endif %}
 
 {% if page.categories %}
-<div class="uk-section uk-background-muted-">
+<div class="uk-section uk-background-muted">
     <div class="uk-container">
 
         {% if page.categories.title %}
@@ -21,20 +61,26 @@ layout: default
         <div class="uk-child-width-1-{{ columns }}@m uk-grid-match uk-text-center uk-margin-medium-top" data-uk-grid>
         {% for item in site.data.navigation_home %}
             {% if item.title %}
-            {% assign doc_url = item.doc | prepend:"/help/" | append:"/" %}
-            {% assign doc = site.help | where:"url", doc_url | first %}
-            <div>
-                <div class="uk-card uk-card-body uk-inline uk-border-rounded">
-                    <a class="uk-position-cover" href="{{ doc.url }}"></a>
-                    {% if item.icon %}
-                    <span data-uk-icon="icon: {{ item.icon }}; ratio: 2" class=""></span>
-                    {% endif %}
-                    <h3 class="uk-card-title uk-margin">{{ item.title }}</h3>
-                    {% if item.desc %}
-                    <p>{{ item.desc }}</p>
-                    {% endif %}
-                </div>
-            </div>
+              {% if item.doc contains 'http' %}
+                {% assign link = item.doc %}
+              {% else %}
+                {% assign doc_url = item.doc | prepend:"/help/" | append:"/" %}
+                {% assign doc = site.help | where:"url", doc_url | first %}
+                {% assign link = doc.url %}
+              {% endif %}
+
+              <div>
+                  <div class="uk-card uk-card-body uk-inline uk-border-rounded uk-card-hover">
+                      <a class="uk-position-cover" href="{{ link }}"></a>
+                      {% if item.icon %}
+                      <span data-uk-icon="icon: {{ item.icon }}; ratio: 2" class=""></span>
+                      {% endif %}
+                      <h3 class="uk-card-title uk-margin">{{ item.title }}</h3>
+                      {% if item.desc %}
+                      <p>{{ item.desc }}</p>
+                      {% endif %}
+                  </div>
+              </div>
             {% endif %}
         {% endfor %}
         </div>
@@ -86,11 +132,35 @@ layout: default
 
 {% if page.cta %}
 <div class="uk-section uk-text-center">
-    <div class="uk-container uk-container-small">
+    <div class="uk-container uk-container-xsmall">
         <div data-uk-scrollspy="cls: uk-animation-slide-bottom-medium; repeat: true">
-            <h3>{{ page.cta.title }}</h3>
+            <h2 class="heading-hero-2">{{ page.cta.title }}</h2>
             {% if page.cta.subtitle %}<p class="subtitle uk-text-lead uk-text-center">{{ page.cta.subtitle | escape }}</p>{% endif %}
-            <a class="uk-button uk-button-secondary uk-button-large button-cta" href="{{ domain }}{{ page.cta.button_url }}">{{ page.cta.button_text }}</a>
+
+            <!-- Begin MailChimp Signup Form -->
+            <div id="mc_embed_signup">
+              <form action="https://pressapps.us8.list-manage.com/subscribe/post?u=2e56c123105fcd37e5dab02bd&amp;id=e6e945b784" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                  <div name="" class="uk-grid-small" data-uk-grid>
+
+                    <div class="mc-field-group uk-width-expand">
+                      <input type="email" value="" name="EMAIL" class="required email uk-input uk-border-rounded" id="mce-EMAIL" placeholder="Enter email addess">
+                    </div>
+                    <div class="uk-width-auto">
+                      <div id="mce-responses" class="clear">
+                        <div class="response" id="mce-error-response" style="display:none"></div>
+                        <div class="response" id="mce-success-response" style="display:none"></div>
+                      </div>
+                      <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_2e56c123105fcd37e5dab02bd_e6e945b784" tabindex="-1" value=""></div>
+                      <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button uk-button uk-button-secondary"></div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!--End mc_embed_signup-->
+
         </div>
     </div>
 </div>

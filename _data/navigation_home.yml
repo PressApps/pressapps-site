@@ -1,16 +1,16 @@
 # Categories home page navigation
 
-- title: Getting Started
-  desc: Get your account up and running in just few easy steps
-  icon: settings
-  doc: home
+- title: Customization
+  desc: Contact us through our Envato profile form
+  icon: code
+  doc: https://themeforest.net/user/pressapps
 
-- title: Account and Billing
-  desc: Managing your account, creating new users and exporting data
-  icon: credit-card
-  doc: frontmatter
+- title: Helpdesk
+  desc: Find answer to your question fast in our helpdesk
+  icon: lifesaver
+  doc: info
 
-- title: Troubleshooting
-  desc: Answers to most common configuration issues
-  icon: cog
-  doc: variables
+- title: Contact Support
+  desc: Contact customer support through our Envato profile form
+  icon: user
+  doc: https://themeforest.net/user/pressapps

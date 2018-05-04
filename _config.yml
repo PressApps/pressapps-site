@@ -95,3 +95,5 @@ sass:
 collections:
   help:
     output: true
+  products:
+    output: false
